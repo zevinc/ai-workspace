@@ -1,0 +1,16 @@
+# IDE
+.idea/
+
+# embeddings
+embeddings/
+vectors/
+
+# cache
+.cache/
+.tmp/
+
+# logs
+logs/
+
+# local config
+.env
