@@ -33,81 +33,68 @@ Agent 启动
 ## CLAUDE.md / AGENTS.md 推荐写法
 
 ```markdown
-# Agent Instructions
-
 ## AI Knowledge Base Loading Rule
 
-This project has **two** AI knowledge bases at:
-- `~/ai-workspace/docs/ai/` (AI Automatic accumulation of knowledge)
-- `~/ai-workspace/docs/manual/` (User Artificial accumulation of knowledge)
+This project has **two** knowledge bases:
 
-The agent must not load all knowledge files by default.
+| Path | Purpose |
+|------|---------|
+| `~/ai-workspace/docs/ai/` | AI‑accumulated technical knowledge |
+| `~/ai-workspace/docs/manual/` | User‑written manuals & operational docs |
 
-Instead, follow this lazy-loading workflow:
+The agent must **not** load all files by default. Follow this lazy‑loading workflow:
 
-1. Read both index files (if they exist):
-   - `~/ai-workspace/docs/ai/INDEX.md`
-   - `~/ai-workspace/docs/manual/INDEX.md`
+### 1. Start from index files
 
-2. Use both `INDEX.md` files as knowledge catalogs.
+Read both index files (if they exist):
+- `~/ai-workspace/docs/ai/INDEX.md`
+- `~/ai-workspace/docs/manual/INDEX.md`
 
-3. Based on the user request, identify relevant content from **either** knowledge base using:
-   - category
-   - tags
-   - summary
-   - file path
+### 2. Find relevant content
 
-4. Load only the matching markdown files. Prefer loading from the knowledge base that has the most relevant match.
+Use the `INDEX.md` files as catalogs. Locate relevant entries by:
+- Category
+- Tags
+- Summary
+- File path
 
-5. If no relevant entry is found in both `INDEX.md` files, optionally search both directories:
+### 3. Load only matching files
+
+Prefer the knowledge base with the most relevant match.
+
+### 4. Fallback search
+
+If no entry is found in either index, optionally search both directories:
 
 ```bash
 rg -n --ignore-case "<keyword>" ~/ai-workspace/docs/ai ~/ai-workspace/docs/manual
 ```
 
-6. Prefer project knowledge over generic answers. When both knowledge bases contain relevant information, prefer:
-    - `~/ai-workspace/docs/manual/` for user-facing manuals, guides, and operational documentation
-    - `~/ai-workspace/docs/ai/` for technical architecture, backend, agents, RAG, prompts, decisions, and troubleshooting
+### 5. Create new knowledge (if applicable)
 
-7. If new reusable knowledge is produced, determine which knowledge base it belongs to:
-    - Save under `~/ai-workspace/docs/ai/<category>/<yyyy-mm-dd>-<topic>.md` for technical/development knowledge
-    - Save under `~/ai-workspace/docs/manual/<category>/<yyyy-mm-dd>-<topic>.md` for user manuals, guides, or operational docs
+Prefer project knowledge over generic answers. When new reusable knowledge is produced, save it to the appropriate base: `~/ai-workspace/docs/ai/<category>/<yyyy-mm-dd>-<topic>.md`
 
-8. After saving a new note, update the corresponding `INDEX.md` file in the same directory.
+### 6. Update index
 
-## Knowledge Categories
+After saving a new note, update the corresponding `INDEX.md` in the same directory.
 
-### For `~/ai-workspace/docs/ai/`
+## Knowledge Categories (`~/ai-workspace/docs/ai/`)
 
-- `architecture`: system design, architecture
-- `backend`: Java, Spring Boot, Gradle, DB, APIs
-- `agents`: Hermes, Claude Code, workflows, automation
-- `rag`: embeddings, vector DB, retrieval
-- `prompts`: prompt engineering, prompt rules
-- `decisions`: ADRs, trade-offs, technical decisions
-- `troubleshooting`: bugs, incidents, debugging
+| Category | Description |
+|----------|-------------|
+| `architecture` | System design, architecture |
+| `backend` | Java, Spring Boot, Gradle, DB, APIs |
+| `agents` | Hermes, Claude Code, workflows, automation |
+| `rag` | Embeddings, vector DB, retrieval |
+| `prompts` | Prompt engineering, rules |
+| `decisions` | ADRs, trade-offs, technical decisions |
+| `troubleshooting` | Bugs, incidents, debugging |
 
-### For `~/ai-workspace/docs/manual/`
+> Additional categories may be defined in `~/ai-workspace/docs/manual/INDEX.md`.
 
-- `user-guides`: end-user documentation, how-to guides
-- `operations`: deployment, monitoring, backup, recovery
-- `faq`: frequently asked questions
-- `onboarding`: new user setup, installation, configuration
-- `reference`: API references, CLI commands, configuration specs
+## Loading Policy Summary
 
-(Actual categories may be defined in `~/ai-workspace/docs/manual/INDEX.md`)
-
-## Knowledge Loading Policy
-
-Do not read all files in `~/ai-workspace/docs/ai/` or `~/ai-workspace/docs/manual/`.
-
-Always start from both `INDEX.md` files:
-- `~/ai-workspace/docs/ai/INDEX.md`
-- `~/ai-workspace/docs/manual/INDEX.md`
-
-Only read detailed markdown files when their path appears relevant to the current task.
-
-When both knowledge bases have relevant information, prioritize based on the task type:
-- **Technical development tasks** → prefer `~/ai-workspace/docs/ai/`
-- **User-facing documentation or operational tasks** → prefer `~/ai-workspace/docs/manual/`
+- ✅ Always start from both `INDEX.md` files
+- ✅ Only read detailed markdown files when relevant
+- ❌ Never read all files in knowledge base directories
 ```
