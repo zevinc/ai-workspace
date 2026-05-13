@@ -1,4 +1,4 @@
-# 落地方案
+# 初始化-知识库
 
 ## 目录设计
 
@@ -29,7 +29,7 @@ mkdir -p scripts
 `AGENTS.md` 这类仓库级规则文件确实是 AI coding agent 的常见做法，也有研究关注它对 Agent 执行效率和输出行为的影响。([arXiv][2])
 
 ```bash
-touch AGENTS.md
+touch init_agent_using_docs.md
 ```
 
 写入：
@@ -378,7 +378,7 @@ Hermes
 
 ```bash
 mkdir -p docs/ai/{architecture,backend,agents,rag,prompts,decisions,troubleshooting}
-touch AGENTS.md
+touch init_agent_using_docs.md
 mkdir -p scripts
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: Hermes 自动知识沉淀方案
 tags: [hermes, knowledge-capture, automation, ai-workflow]
-summary: 基于 AGENTS.md 规则，通过 AI 自动识别并保存高价值知识到 docs/ai/ 目录的完整方案
+summary: 基于 init_agent_using_docs.md 规则，通过 AI 自动识别并保存高价值知识到 docs/ai/ 目录的完整方案
 created: 2026-05-13
 ---
 
