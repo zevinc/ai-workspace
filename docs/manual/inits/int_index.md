@@ -1,3 +1,16 @@
+---
+title: 知识库索引目录规范
+tags:
+    - INDEX.md
+    - index
+    - knowledge-base
+    - metadata
+    - entry-format
+    - reference
+summary: 定义 INDEX.md 索引目录的 Entry 格式规范：path/category/tags/summary/use_when/related/priority/last_updated/status 各字段语义与格式要求，含完整示例和 Agent 从读到用的生效过程。
+created: 2026-05-13
+---
+
 # 初始化-知识库-索引目录(`INDEX.md`)
 
 每次知识自动沉淀后，更新索引目录 `docs/ai/INDEX.md` 和 `docs/manual/INDEX.md`，记录新知识的来源、内容摘要和标签。这样 Agent 就能快速定位相关知识，提升回答效率。

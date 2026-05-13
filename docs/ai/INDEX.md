@@ -5,23 +5,35 @@
 
 ---
 
-## Entry: hermes-auto-knowledge
+## Entry: agent-auto-knowledge-capture
 
-- path: `docs/ai/agents/2026-05-13-0150-hermes-auto-knowledge.md`
+- path: `docs/ai/agents/2026-05-13-1549-agent-auto-knowledge-capture.md`
 - category: `agents`
 - tags:
-    - `hermes`
+    - `agent`
     - `knowledge-capture`
+    - `architecture`
     - `automation`
-    - `ai-workflow`
-- summary: 基于 INIT_INDEX.md 规则，通过 AI 自动识别并保存高价值知识到 docs/ai/ 目录的完整方案，含触发条件、分类体系和保存流程。
+    - `rag`
+    - `pgvector`
+    - `index`
+    - `retrieval`
+    - `frontmatter`
+- summary: AI Agent 自动知识沉淀完整方案（语言/框架无关）：5 层架构（触发→捕获→处理→存储→检索）、5 步保存管道含双索引更新、去重与增量更新策略、8 大分类路由、工程陷阱与性能考量、完整工具链与参考项目。
 - use_when:
-    - User asks about auto knowledge capture / 自动知识沉淀
-    - User asks about docs/ai/ workflow
-    - User asks about AGENTS.md knowledge rules
-    - User asks about save_ai_note.sh script
+    - User asks about AI agent knowledge capture / 知识沉淀 / 自动文档化
+    - User asks about docs/ai/ or docs/manual/ knowledge base architecture
+    - User asks about agent knowledge indexing / 索引 / INDEX.md
+    - User asks about AGENTS.md Markdown Template / frontmatter format
+    - User asks about dual knowledge base / 双库双索引 / save pipeline
+    - User asks about save_ai_note.sh pipeline / Step 1-5
+    - User asks about anti-duplication / 去重 / 增量更新 strategy
 - related:
     - `docs/ai/agents/2026-05-13-1315-agent-paradigms-patterns.md`
+    - `docs/manual/inits/int_index.md`
+    - `docs/manual/inits/init_agent_using_docs.md`
+    - `scripts/save_ai_note.sh`
+    - `AGENTS.md`
 - priority: `high`
 - last_updated: `2026-05-13`
 - status: `active`

@@ -1,3 +1,17 @@
+---
+title: 知识库初始化方案
+tags:
+    - knowledge-base
+    - initialization
+    - directory-structure
+    - AGENTS.md
+    - setup
+    - automation
+    - save-pipeline
+summary: 项目知识库从零搭建的完整初始化方案：目录结构设计（8 个分类 + INDEX.md）、AGENTS.md 模板规则、保存脚本与管道、分类路由、索引更新策略、以及 Agent 使用文档的配置引导。
+created: 2026-05-13
+---
+
 # 初始化-知识库
 
 ## 目录设计

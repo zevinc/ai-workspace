@@ -13,7 +13,7 @@ fi
 mkdir -p "docs/ai/${CATEGORY}"
 
 TS=$(date +"%Y-%m-%d-%H%M")
-SAFE_TOPIC=$(echo "$TOPIC" | tr '[:upper:]' '[:lower:]' | sed 's/[^2026-05-13_AI_Knowledge_Base_Index.md-z0-9-]/-/g' | sed 's/-\+/-/g')
+SAFE_TOPIC=$(echo "$TOPIC" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9-]/-/g' | sed 's/-\+/-/g')
 TARGET="docs/ai/${CATEGORY}/${TS}-${SAFE_TOPIC}.md"
 
 cp "$CONTENT_FILE" "$TARGET"

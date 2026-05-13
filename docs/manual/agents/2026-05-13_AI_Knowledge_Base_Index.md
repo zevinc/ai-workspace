@@ -1,3 +1,13 @@
+---
+title: AI 知识库索引
+tags:
+    - knowledge-base
+    - index
+    - lazy-loading
+summary: 按关键词和标签组织的知识库索引条目，Agent 匹配关键词后按需加载对应文件。
+created: 2026-05-13
+---
+
 # AI Knowledge Base Index
 
 > 本索引用于 AI 智能体懒加载知识库。  

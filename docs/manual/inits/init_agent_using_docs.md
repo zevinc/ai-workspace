@@ -1,3 +1,17 @@
+---
+title: Agent 知识库使用规范
+tags:
+    - agent
+    - knowledge-base
+    - lazy-loading
+    - INDEX.md
+    - documentation
+    - CLAUDE.md
+    - AGENTS.md
+summary: 描述 Agent（Claude Code 等）如何按需加载两个知识库的流程规范：先读索引目录、按关键词匹配 category/tags/summary、按需加载具体文档，含 CLAUDE.md/AGENTS.md 推荐写法、8 个 ai/ 分类 + 5 个 manual/ 分类体系、以及双库优先级策略。
+created: 2026-05-13
+---
+
 # 初始化-智能体-使用知识库
 
 ## 加载流程
@@ -24,8 +38,8 @@ Agent 启动
 ## AI Knowledge Base Loading Rule
 
 This project has **two** AI knowledge bases at:
-- `~/ai-workspace/docs/ai/`
-- `~/ai-workspace/docs/manual/`
+- `~/ai-workspace/docs/ai/` (AI Automatic accumulation of knowledge)
+- `~/ai-workspace/docs/manual/` (User Artificial accumulation of knowledge)
 
 The agent must not load all knowledge files by default.
 
