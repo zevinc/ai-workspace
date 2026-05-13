@@ -24,15 +24,16 @@ mkdir -p .tmp/ai & .tmp/ai/note.md
 
 2. Choose a category:
 
-| Category        | Usage                                      |
-| --------------- | ------------------------------------------ |
-| architecture    | system design, architecture                |
-| backend         | Java, Spring Boot, Gradle, DB, APIs        |
-| agents          | Hermes, Claude Code, workflows, automation |
-| rag             | embeddings, vector DB, retrieval           |
-| prompts         | prompt engineering, prompt rules           |
-| decisions       | ADRs, trade-offs, technical decisions      |
-| troubleshooting | bugs, incidents, debugging                 |
+| Category        | Usage                                        |
+| --------------- |----------------------------------------------|
+| architecture    | system design, architecture                  |
+| backend         | Java, Spring Boot, Gradle, DB, APIs          |
+| frontend        | React, Vue, Angular, UI/UX, state management |
+| agents          | Hermes, Claude Code, workflows, automation   |
+| rag             | embeddings, vector DB, retrieval             |
+| prompts         | prompt engineering, prompt rules             |
+| decisions       | ADRs, trade-offs, technical decisions        |
+| troubleshooting | bugs, incidents, debugging                   |
 
 3. Choose a short kebab-case topic:
 
