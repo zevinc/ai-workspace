@@ -1,27 +1,6 @@
-可以，建议这样落地。
+# 落地方案
 
-Hermes 自身有 memory/learning 能力，但“把重要回答自动保存到你项目的 `docs/ai/` 并做 embeddings”更像是**项目级知识库**，不应完全依赖 Hermes 内置记忆。Hermes 相关讨论里也提到：持久、可搜索的用户/项目知识库仍是一个独立需求，和 Agent 自身短记忆不是一回事。([GitHub][1])
-
----
-
-## 1. 这些目录有什么用？怎么设计比较好？
-
-你这个目录：
-
-```text
-project/
-├── docs/
-│   └── ai/
-│       ├── architecture/
-│       ├── backend/
-│       ├── agents/
-│       ├── rag/
-│       └── troubleshooting/
-```
-
-作用是把 AI 产出的内容按“复用场景”分类。
-
-推荐这样理解：
+## 目录设计
 
 ```text
 docs/ai/
@@ -33,39 +12,21 @@ docs/ai/
 ├── prompts/             # 提示词模板、系统规则、Agent规则
 ├── decisions/           # 技术决策记录，类似 ADR
 └── snippets/            # 可复用代码片段
+└── INDEX.md             # 索引目录
 ```
-
-更推荐你用这个版本：
-
-```text
-docs/
-└── ai/
-    ├── architecture/
-    ├── backend/
-    ├── agents/
-    ├── rag/
-    ├── prompts/
-    ├── decisions/
-    ├── troubleshooting/
-    └── index.md
-```
-
-其中 `index.md` 用来做总索引。
-
----
 
 ## 2. “真正自动化”步骤
 
-### 第一步：在项目根目录创建目录
+### 2-1. 在项目根目录创建目录
 
 ```bash
 mkdir -p docs/ai/{architecture,backend,agents,rag,prompts,decisions,troubleshooting}
 mkdir -p scripts
 ```
 
----
+### 2-2. 在项目根目录创建 `AGENTS.md`
 
-### 第二步：在项目根目录创建 `AGENTS.md`
+`AGENTS.md` 这类仓库级规则文件确实是 AI coding agent 的常见做法，也有研究关注它对 Agent 执行效率和输出行为的影响。([arXiv][2])
 
 ```bash
 touch AGENTS.md
@@ -119,11 +80,7 @@ created:
 # Related
 ```
 
-`AGENTS.md` 这类仓库级规则文件确实是 AI coding agent 的常见做法，也有研究关注它对 Agent 执行效率和输出行为的影响。([arXiv][2])
-
----
-
-### 第三步：创建保存脚本
+### 2-3. 创建保存脚本
 
 ```bash
 cat > scripts/save_ai_note.sh <<'EOF'
@@ -153,33 +110,27 @@ EOF
 chmod +x scripts/save_ai_note.sh
 ```
 
----
-
-### 第四步：创建临时输出目录
+### 2-4. 创建临时输出目录
 
 ```bash
 mkdir -p .ai-tmp
 ```
 
----
+### 2-5. 让 Coding Agent 按规则执行
 
-### 第五步：让 Hermes 按规则执行
-
-你在 Hermes 里测试：
+发起对话, 提示词如下:
 
 ```text
 请根据 AGENTS.md 规则，生成一篇关于 Hermes 自动知识沉淀方案的文档，并保存到 docs/ai/agents/
 ```
 
-如果 Hermes 有 shell/file tool 权限，它应该会创建文件。
+如果 Agent 有 shell/file tool 权限，它应该会创建文件。
 
 如果它不能自动写文件，就让它生成 markdown 内容，然后你手动执行：
 
 ```bash
 scripts/save_ai_note.sh agents hermes-auto-knowledge .ai-tmp/note.md
 ```
-
----
 
 ## 3. 自动 embeddings 步骤
 
@@ -201,9 +152,7 @@ docs/ai/*.md
 Hermes / Spring Boot 检索
 ```
 
----
-
-### 第一步：启动 PostgreSQL + pgvector
+### 3-1. 启动 PostgreSQL + pgvector
 
 `docker-compose.yml`：
 
@@ -231,9 +180,7 @@ volumes:
 docker compose up -d
 ```
 
----
-
-### 第二步：建表
+### 3-2. 建表
 
 ```bash
 docker exec -it ai-pgvector psql -U ai -d ai_knowledge
@@ -262,9 +209,7 @@ ON ai_docs USING ivfflat (embedding vector_cosine_ops)
 WITH (lists = 100);
 ```
 
----
-
-### 第三步：写索引脚本
+### 3-3. 写索引脚本
 
 创建：
 
@@ -353,9 +298,7 @@ export OPENAI_API_KEY="你的key"
 python scripts/index_ai_docs.py
 ```
 
----
-
-### 第四步：写检索脚本
+### 3-4. 写检索脚本
 
 ```bash
 touch scripts/search_ai_docs.py
@@ -411,9 +354,7 @@ with DB.cursor() as cur:
 python scripts/search_ai_docs.py "Hermes 自动知识沉淀怎么做"
 ```
 
----
-
-## 最终推荐流程
+## 4. 最终推荐流程
 
 你现在先做这个版本：
 
