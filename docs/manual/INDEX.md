@@ -7,7 +7,7 @@
 
 ## Entry: ai-knowledge-base-index
 
-- path: `docs/manual/agents/2026-05-13_AI_Knowledge_Base_Index.md`
+- path: `docs/manual/agents/2026-05-13-0001_AI_Knowledge_Base_Index.md`
 - category: `agents`
 - tags:
     - `knowledge-base`
@@ -29,7 +29,7 @@
 
 ## Entry: claude-md-java-springboot-constitution
 
-- path: `docs/manual/prompts/2026-05-13-CLAUDE.md`
+- path: `docs/manual/agent/2026-05-13-0001-CLAUDE.md`
 - category: `prompts`
 - tags:
     - `claude-code`
@@ -47,7 +47,7 @@
     - User asks about error handling patterns / global exception handler
     - User asks about testing standards (unit / integration / e2e)
 - related:
-    - `docs/manual/agents/2026-05-13_AI_Knowledge_Base_Index.md`
+    - `docs/manual/agents/2026-05-13-0001-AI_Knowledge_Base_Index.md`
 - priority: `high`
 - last_updated: `2026-05-13`
 - status: `active`
