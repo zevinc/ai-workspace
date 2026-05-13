@@ -5,6 +5,45 @@
 
 ---
 
+## Entry: cloud-agent-platform-final
+
+- path: `docs/ai/architecture/2026-05-13-1705-cloud-agent-platform-final.md`
+- category: `architecture`
+- tags:
+    - `agent-platform`
+    - `architecture`
+    - `microservices`
+    - `spring-ai`
+    - `temporal`
+    - `RAG`
+    - `multi-agent`
+    - `orchestration`
+    - `guardrails`
+    - `MCP`
+    - `A2A`
+    - `knowledge-base`
+- summary: 云端通用 Agent 平台最终融合方案（Hermes + GPT5.5）：8 层服务架构含独立 Model Gateway 和 Session Service、9 大模块含 SQL Schema、Spring AI + Temporal 技术栈、3 层 Guardrails、6 步 RAG 管道+知识图谱、5 种编排模式、24 周 5 阶段执行计划、7-9 人团队。融合策略：GPT5.5 主体(90%) + Hermes 模块化拆分。
+- use_when:
+    - User asks about cloud agent platform / 云端 Agent 平台 / Agent 平台架构
+    - User asks about agent platform final solution / 最终方案
+    - User asks about agent microservice design / 模块设计 / SQL Schema
+    - User asks about Spring AI / Temporal / pgvector / Guardrails
+    - User asks about agent platform execution plan / 执行计划 / 24 周 / 团队配置
+    - User asks about Model Gateway / Session Service / Tool Registry / RAG
+    - User asks about agent platform technology selection / 技术选型
+    - User asks about multi-agent orchestration / 多 Agent 编排 / Debate / Supervisor
+- related:
+    - `docs/ai/agents/2026-05-13-1315-agent-paradigms-patterns.md`
+    - `docs/ai/agents/2026-05-13-1549-agent-auto-knowledge-capture.md`
+    - `docs/temp/history/2026-05-13-1638-cloud-agent-platform.hermes.md`
+    - `docs/temp/history/2026-05-13-1638-cloud-agent-platform.gpt55.md`
+    - `docs/temp/comparison/2026-05-13-1645-agent-platform-comparison.md`
+- priority: `high`
+- last_updated: `2026-05-13`
+- status: `active`
+
+---
+
 ## Entry: agent-auto-knowledge-capture
 
 - path: `docs/ai/agents/2026-05-13-1549-agent-auto-knowledge-capture.md`
