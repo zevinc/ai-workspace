@@ -143,3 +143,33 @@
 - priority: `high`
 - last_updated: `2026-05-13`
 - status: `active`
+
+---
+
+## Entry: spring-webmvcconfigurer-all-methods
+
+- path: `docs/ai/backend/2026-05-14-0105-spring-webmvcconfigurer-all-methods.md`
+- category: `backend`
+- tags:
+    - `spring-mvc`
+    - `spring-boot`
+    - `webmvcconfigurer`
+    - `extension-point`
+    - `java-config`
+    - `interceptor`
+    - `cors`
+    - `message-converter`
+    - `argument-resolver`
+- summary: WebMvcConfigurer 接口全部 18 个 default 方法的中文详解，每个方法配有完整代码示例、注释和最佳实践。覆盖路径匹配、内容协商、拦截器、CORS、消息转换器、参数解析器、视图解析等全部扩展点。
+- use_when:
+    - User asks about WebMvcConfigurer / MVC config extension / MVC 配置扩展
+    - User asks about Spring MVC interceptor / CORS / message converter config
+    - User asks about argument resolver / return value handler / 自定义参数解析器
+    - User asks about configure vs extend vs add pattern / 替换还是扩展
+    - User asks about path matching / content negotiation / 路径匹配 / 内容协商
+    - User asks about resource handler / view controller / static resource config
+- related:
+    - `docs/manual/agent/2026-05-13-0001-CLAUDE.md`
+- priority: `high`
+- last_updated: `2026-05-14`
+- status: `active`
