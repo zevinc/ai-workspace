@@ -114,6 +114,71 @@
 
 ---
 
+## Entry: http-protocol-interview-questions
+
+- path: `docs/ai/backend/2026-05-14-1124-http-protocol-interview-questions.md`
+- category: `backend`
+- tags:
+    - `http`
+    - `https`
+    - `network`
+    - `protocol`
+    - `interview`
+    - `cache`
+    - `cookie`
+    - `jwt`
+    - `tls`
+    - `cors`
+    - `http2`
+    - `http3`
+    - `quic`
+- summary: HTTP 协议面试题型系统归类，覆盖 8 大类：基础概念、版本演进(0.9→3)、方法(GET/POST/PUT/PATCH)、状态码(1xx~5xx)、头部、HTTPS/TLS 加密与握手、认证(Cookie/Session/JWT)、缓存(强缓存/协商缓存)。每题配有经典追问与标准答案，按初/中/高级标注考察重点。
+- use_when:
+    - User asks about HTTP interview questions / HTTP 面试题
+    - User asks about HTTP/HTTPS protocol / HTTP 协议原理
+    - User asks about HTTP version differences / HTTP 版本演进
+    - User asks about Cookie / Session / JWT / Token 认证
+    - User asks about HTTP cache / 强缓存 / 协商缓存 / Cache-Control
+    - User asks about TLS handshake / HTTPS 加密原理
+    - User asks about CORS / 跨域 / OPTIONS 预检
+    - User asks about HTTP/2 多路复用 / HTTP/3 QUIC
+- related:
+    - ~
+- priority: `high`
+- last_updated: `2026-05-14`
+- status: `active`
+
+---
+
+## Entry: jakarta-servlet-dispatchertype
+
+- path: `docs/ai/backend/2026-05-14-1426-jakarta-servlet-dispatchertype.md`
+- category: `backend`
+- tags:
+    - `servlet`
+    - `jakarta`
+    - `dispatchertype`
+    - `filter`
+    - `enum`
+    - `tomcat`
+    - `spring-boot`
+    - `spring-security`
+- summary: jakarta.servlet.DispatcherType 枚举 6 个值详解（REQUEST/FORWARD/INCLUDE/ASYNC/ERROR/WEBSOCKET）：触发条件、Filter 配置方式（@WebFilter/web.xml/FilterRegistrationBean）、forward 绕过安全漏洞案例、Tomcat 源码 Filter 匹配流程、Spring Security 全类型注册策略。
+- use_when:
+    - User asks about DispatcherType / Servlet dispatcher type / 分发类型
+    - User asks about Filter dispatcher / Filter 不生效 / forward 绕过
+    - User asks about Servlet filter chain / request.getDispatcherType()
+    - User asks about @WebFilter dispatcherTypes configuration
+    - User asks about Spring Security filter registration
+    - User asks about ASYNC dispatch / ERROR page filter
+- related:
+    - `docs/ai/backend/2026-05-14-0105-spring-webmvcconfigurer-all-methods.md`
+- priority: `high`
+- last_updated: `2026-05-14`
+- status: `active`
+
+---
+
 ## Entry: spring-webmvcconfigurer-all-methods
 
 - path: `docs/ai/backend/2026-05-14-0105-spring-webmvcconfigurer-all-methods.md`
