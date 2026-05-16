@@ -44,6 +44,37 @@
 
 ---
 
+## Entry: assessment-system-database-design
+
+- path: `docs/ai/decisions/2026-05-15-2210-assessment-system-database-design.md`
+- category: `decisions`
+- tags:
+    - `assessment`
+    - `exam-system`
+    - `workflow-engine`
+    - `database-design`
+    - `spring-boot`
+    - `dynamic-workflow`
+    - `state-machine`
+    - `performance-evaluation`
+    - `question-bank`
+- summary: 通用考试考核系统完整设计方案：支持三种考核类型（考试排考/绩效考核/技能评估）的模板-实例架构，JSON 配置驱动的动态流程引擎（含三种类型的完整 workflow_config 示例），10 张数据库表设计（核心表+扩展表），完整的 RESTful API 设计，Spring Boot 包结构建议，以及关键技术决策和实施计划。
+- use_when:
+    - User asks about assessment/exam system design / 考试考核系统设计
+    - User asks about dynamic workflow configuration / 动态流程配置
+    - User asks about exam scheduling / performance evaluation database design
+    - User asks about assessment template-engine pattern / 考核模板设计
+    - User asks about state machine workflow engine / 状态机流程引擎
+    - User asks about question bank / auto-grading system design
+- related:
+    - `docs/ai/architecture/2026-05-13-1705-cloud-agent-platform-final.md`
+    - `docs/ai/backend/2026-05-14-0105-spring-webmvcconfigurer-all-methods.md`
+- priority: `high`
+- last_updated: `2026-05-15`
+- status: `active`
+
+---
+
 ## Entry: agent-auto-knowledge-capture
 
 - path: `docs/ai/agents/2026-05-13-1549-agent-auto-knowledge-capture.md`
